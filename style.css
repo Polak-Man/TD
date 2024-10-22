@@ -1,49 +1,135 @@
+/* Style général pour tout le corps de la page */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1f8ef1, #5c7cfa);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
+/* Conteneur principal avec une ombre élégante et des coins arrondis */
 .container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 350px;
+    animation: fadeIn 1.5s ease-out;
 }
 
+/* Titre principal avec un dégradé et animation */
 h1 {
-    margin-bottom: 20px;
+    background: linear-gradient(to right, #1f8ef1, #5c7cfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 28px;
+    margin-bottom: 25px;
+    animation: slideDown 1s ease-out;
 }
 
-form div {
-    margin-bottom: 10px;
+/* Animation pour le titre */
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-input, select, button {
+/* Style des labels et des inputs avec une transition fluide */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
+    padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+    font-size: 16px;
 }
 
+/* Effet d'élévation pour les champs input au focus */
+input:focus, select:focus {
+    border-color: #5c7cfa;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transform: translateY(-2px);
+}
+
+/* Bouton de conversion avec animation hover */
 button {
-    background-color: #28a745;
+    background: linear-gradient(135deg, #1f8ef1, #5c7cfa);
     color: white;
+    padding: 12px;
     border: none;
+    border-radius: 25px;
     cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #218838;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Effet lors du clic sur le bouton */
+button:active {
+    transform: scale(0.98);
+}
+
+/* Section pour afficher le résultat */
 #result {
     margin-top: 20px;
     font-size: 18px;
+    color: #333;
+    animation: fadeInResult 1s ease-in-out;
+}
+
+/* Animation d'apparition pour le résultat */
+@keyframes fadeInResult {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation générale lors de l'affichage du conteneur */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Réactivité pour les petits écrans */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
 }

@@ -2,6 +2,11 @@
   "name": "votre-repo",
   "version": "1.0.0",
   "requires": true,
+  "scripts": {
+
+  "test": "jest"
+
+},
   "packages": {
     "": {
       "name": "logan",

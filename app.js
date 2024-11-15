@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiKey = 'TA_CLE_API_ICI'; // Remplace par ta clé API ExchangeRate-API
+    const apiKey = '5c49c94d088d8cc130648b78'; // Remplace par ta clé API ExchangeRate-API
     const fromCurrency = document.getElementById('from-currency');
     const toCurrency = document.getElementById('to-currency');
     const amountInput = document.getElementById('amount');
